@@ -2,6 +2,8 @@ module github.com/form3tech-oss/cilium-etcd-watchdog
 
 go 1.14
 
+replace github.com/googleapis/gnostic => github.com/googleapis/gnostic v0.3.1
+
 replace k8s.io/api => k8s.io/api v0.15.12
 
 replace k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.15.12

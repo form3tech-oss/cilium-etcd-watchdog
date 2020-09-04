@@ -42,7 +42,6 @@ func birthCry(kubeClient kubernetes.Interface) {
 	log.Infof("cilium-etcd-watchdog %s (Kubernetes %v)", version.Version, v)
 }
 
-// createClients creates a Kubernetes client based on the specified kubeconfig file, and a client to the 'etcd.database.coreos.com/v1beta2' API.
 func createClients(pathToKubeconfig string) (kubernetes.Interface, etcdclustersclient.Interface, error) {
 	c, err := clientcmd.BuildConfigFromFlags("", pathToKubeconfig)
 	if err != nil {
