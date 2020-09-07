@@ -1,0 +1,40 @@
+affinity: {}
+cluster:
+  bootstrapGracePeriod: 2m
+  name: cilium-etcd
+  namespace: kube-system
+etcdClient:
+  dialTimeout: 2s
+  opTimeout: 3s
+fullnameOverride: cilium-etcd-watchdog
+image:
+  pullPolicy: IfNotPresent
+  repository: form3tech/cilium-etcd-watchdog
+  tag: ""
+imagePullSecrets: []
+logLevel: info
+maxQuorumStatusCheckFailures: 3
+nameOverride: ""
+namespaceOverride: ""
+nodeSelector: {}
+podSecurityContext:
+  fsGroup: 65534
+pollingInterval: 10s
+replicaCount: 1
+resources:
+  requests:
+    cpu: 10m
+    memory: 32Mi
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+    - ALL
+  readOnlyRootFilesystem: true
+  runAsGroup: 65534
+  runAsNonRoot: true
+  runAsUser: 65534
+serviceAccount:
+  annotations: {}
+  create: true
+tolerations: []

@@ -161,7 +161,7 @@ func main() {
 			c, err := getCiliumEtcdEtcdClusterResource(etcdClient, *clusterName, *clusterNamespace)
 			if err != nil {
 				if kubeerrors.IsNotFound(err) {
-					log.Warn("Waiting for Cilium's etcd 'EtcdCluster' resource to be created")
+					log.Info("Waiting for Cilium's etcd 'EtcdCluster' resource to be created")
 				} else {
 					log.Errorf("Failed to get Cilium's etcd 'EtcdCluster' resource: %v", err)
 				}
